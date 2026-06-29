@@ -1,0 +1,151 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - link [ref=e189] [cursor=pointer]:
+              - /url: /
+              - img [ref=e190]
+            - generic [ref=e10]:
+              - generic [ref=e11]: Easypanel
+              - generic [ref=e12]:
+                - generic [ref=e13]: v2.32.0
+                - button [ref=e14] [cursor=pointer]:
+                  - img [ref=e15]
+                - combobox [ref=e20]
+          - generic [ref=e21]:
+            - link [ref=e191] [cursor=pointer]:
+              - /url: /
+              - img [ref=e23]
+              - generic [ref=e26]: Painel
+            - link [ref=e192] [cursor=pointer]:
+              - /url: /actions
+              - img [ref=e28]
+              - generic [ref=e30]: Ações
+            - link [ref=e193] [cursor=pointer]:
+              - /url: /monitor
+              - img [ref=e32]
+              - generic [ref=e34]: Monitorar
+            - link [ref=e194] [cursor=pointer]:
+              - /url: /domains
+              - img [ref=e36]
+              - generic [ref=e39]: Domínios
+            - link [ref=e195] [cursor=pointer]:
+              - /url: /settings
+              - img [ref=e41]
+              - generic [ref=e44]: Configurações
+          - generic [ref=e46]:
+            - link [ref=e196] [cursor=pointer]:
+              - /url: https://easypanel.io/docs
+              - img [ref=e48]
+              - generic [ref=e50]: Documentação
+              - img [ref=e52]
+            - link [ref=e197] [cursor=pointer]:
+              - /url: https://discord.gg/9bcDSXcZQ7
+              - img [ref=e198]
+              - generic [ref=e59]: Discord
+              - img [ref=e61]
+            - link [ref=e199] [cursor=pointer]:
+              - /url: https://my.easypanel.io/feedback
+              - img [ref=e66]
+              - generic [ref=e68]: Feedback
+              - img [ref=e70]
+            - link [ref=e200] [cursor=pointer]:
+              - /url: https://my.easypanel.io/changelog
+              - img [ref=e75]
+              - generic [ref=e78]: Histórico de Alterações
+              - img [ref=e80]
+          - link [ref=e201] [cursor=pointer]:
+            - /url: /buy-license
+            - img [ref=e85]
+            - generic [ref=e89]: Comprar Licença
+          - button [ref=e202] [cursor=pointer]:
+            - img [ref=e91]
+            - generic [ref=e94]: Busca Rápida
+            - generic [ref=e96]: ⌘ K
+          - generic [ref=e97]:
+            - heading [level=2] [ref=e203]: Command Palette
+            - paragraph [ref=e99]: Search for a command to run...
+          - button [ref=e204] [cursor=pointer]:
+            - img [ref=e101]
+            - generic [ref=e105]: 76.13.232.134
+            - img [ref=e107]
+          - generic [ref=e110]:
+            - img [ref=e111]
+            - generic [ref=e113]: Modo Escuro
+            - generic [ref=e114]:
+              - switch [ref=e205]
+              - checkbox [ref=e116]
+          - button [ref=e206] [cursor=pointer]:
+            - img [ref=e118]
+            - generic [ref=e121]: Sair
+        - generic [ref=e124]:
+          - button [ref=e207] [cursor=pointer]:
+            - img [ref=e127]
+            - generic [ref=e130]: apps
+            - img [ref=e131]
+          - generic [ref=e134]:
+            - generic [ref=e135]: Serviços
+            - link [ref=e136] [cursor=pointer]:
+              - /url: /projects/apps/create
+              - img [ref=e137]
+          - link [ref=e208] [cursor=pointer]:
+            - /url: /projects/apps/compose/supabase
+            - generic [ref=e146]: supabase
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - link [ref=e209] [cursor=pointer]:
+            - /url: /projects/apps
+            - text: apps
+          - generic [ref=e152]:
+            - link [ref=e210] [cursor=pointer]:
+              - /url: /projects/apps/create
+              - img [ref=e155]
+              - text: Serviço
+            - link [ref=e211] [cursor=pointer]:
+              - /url: /projects/apps/create?tab=templates
+              - img [ref=e158]
+              - text: Modelos
+            - link [ref=e212] [cursor=pointer]:
+              - /url: /projects/apps/settings
+              - img [ref=e162]
+        - generic [ref=e166]:
+          - group [ref=e168]:
+            - button [ref=e213] [cursor=pointer]: Serviços
+            - button [ref=e214] [cursor=pointer]: Modelos
+            - button [ref=e215] [cursor=pointer]: Personalizado
+          - generic [ref=e173]:
+            - button [ref=e216] [cursor=pointer]: Aplicativo
+            - button [ref=e217] [cursor=pointer]: MySQL
+            - button [ref=e218] [cursor=pointer]: MariaDB
+            - button [ref=e219] [cursor=pointer]: Postgres
+            - button [ref=e220] [cursor=pointer]: Mongo
+            - button [ref=e221] [cursor=pointer]: Redis
+            - button [ref=e222] [cursor=pointer]: Caixa
+            - button [ref=e223] [cursor=pointer]:
+              - generic [ref=e182]:
+                - generic [ref=e183]: Compose
+                - generic [ref=e184]: Beta
+            - button [ref=e224] [cursor=pointer]:
+              - generic [ref=e186]:
+                - generic [ref=e187]: Wordpress
+                - generic [ref=e188]: Alfa
+    - region "Notifications alt+T"
+  - generic:
+    - region "Notifications-top"
+    - region "Notifications-top-left"
+    - region "Notifications-top-right"
+    - region "Notifications-bottom-left"
+    - region "Notifications-bottom"
+    - region "Notifications-bottom-right"
+  - dialog "Criar Serviço de Aplicativo" [ref=e228]:
+    - generic [ref=e230]:
+      - heading "Criar Serviço de Aplicativo" [level=2] [ref=e232]
+      - group [ref=e233]:
+        - generic [ref=e234]: Nome do Serviço
+        - textbox "Nome do Serviço" [active] [ref=e236]
+      - button "Criar" [ref=e238] [cursor=pointer]
+    - button "Close" [ref=e239] [cursor=pointer]:
+      - img
+      - generic [ref=e240]: Close

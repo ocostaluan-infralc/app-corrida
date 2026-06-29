@@ -1,0 +1,18 @@
+[      60ms] [ERROR] ActionInvalidator subscription failed: TypeError: network error @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:480
+[      80ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[      80ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[     133ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[     133ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[     412ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[     412ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[     513ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[     513ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[     556ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[     556ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/domains:0
+[   16935ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:349
+[   16935ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:349
+[   31869ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:302
+[   31869ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:302
+[   32598ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://56kyrn.easypanel.host/api/rpc/monitorOld/getServiceStats:0
+[   33060ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://56kyrn.easypanel.host/api/rpc/services/common/getServiceError:0
+[   33119ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://56kyrn.easypanel.host/api/rpc/monitorOld/getDockerTaskStats:0

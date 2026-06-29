@@ -1,0 +1,15 @@
+- generic [ref=e3]:
+  - generic [ref=e4]: App Corrida
+  - generic [ref=e6]:
+    - paragraph [ref=e7]: Entre para ver suas provas e a contagem regressiva.
+    - generic [ref=e8]:
+      - generic [ref=e9]:
+        - generic [ref=e10]: Email
+        - textbox "Email" [ref=e11]:
+          - /placeholder: voce@email.com
+      - generic [ref=e12]:
+        - generic [ref=e13]: Senha
+        - textbox "Senha" [ref=e14]:
+          - /placeholder: Sua senha
+      - button "Entrar" [ref=e15] [cursor=pointer]
+    - paragraph [ref=e16]: Ainda nao tem conta? Criar conta

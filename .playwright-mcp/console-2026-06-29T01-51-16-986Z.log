@@ -1,0 +1,10 @@
+[     277ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ chrome-error://chromewebdata/:0
+[  142663ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://apps-supabase.56kyrn.easypanel.host/favicon/manifest.json:0
+[  142663ms] [ERROR] Manifest fetch from https://apps-supabase.56kyrn.easypanel.host/favicon/manifest.json failed, code 401 @ https://apps-supabase.56kyrn.easypanel.host/project/default:0
+[  143528ms] [LOG] Supabase Studio is running commit development deployed at unknown time. @ https://apps-supabase.56kyrn.easypanel.host/_next/static/chunks/0te5ek_l59ig3.js:32
+[  143628ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://apps-supabase.56kyrn.easypanel.host/api/platform/notifications?offset=0&limit=20&status=new%2Cseen:0
+[  143674ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://apps-supabase.56kyrn.easypanel.host/favicon/manifest.json:0
+[  143674ms] [ERROR] Manifest fetch from https://apps-supabase.56kyrn.easypanel.host/favicon/manifest.json failed, code 401 @ https://apps-supabase.56kyrn.easypanel.host/project/default:0
+[  144662ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://apps-supabase.56kyrn.easypanel.host/api/platform/notifications?offset=0&limit=20&status=new%2Cseen:0
+[  146695ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://apps-supabase.56kyrn.easypanel.host/api/platform/notifications?offset=0&limit=20&status=new%2Cseen:0
+[  150721ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://apps-supabase.56kyrn.easypanel.host/api/platform/notifications?offset=0&limit=20&status=new%2Cseen:0

@@ -1,0 +1,11 @@
+[     650ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://56kyrn.easypanel.host/api/rpc/actions/listActions:0
+[     777ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/:0
+[     777ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/:0
+[  119560ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/:0
+[  119560ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/:0
+[  120132ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:302
+[  120133ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:302
+[  120310ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/:0
+[  120310ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/:0
+[  120487ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:399
+[  120487ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:399

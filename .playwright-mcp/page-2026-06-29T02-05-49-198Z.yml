@@ -1,0 +1,293 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - link [ref=e354] [cursor=pointer]:
+              - /url: /
+              - img [ref=e355]
+            - generic [ref=e10]:
+              - generic [ref=e11]: Easypanel
+              - generic [ref=e12]:
+                - generic [ref=e13]: v2.32.0
+                - button [ref=e14] [cursor=pointer]:
+                  - img [ref=e15]
+                - combobox [ref=e20]
+          - generic [ref=e21]:
+            - link [ref=e356] [cursor=pointer]:
+              - /url: /
+              - img [ref=e23]
+              - generic [ref=e26]: Painel
+            - link [ref=e357] [cursor=pointer]:
+              - /url: /actions
+              - img [ref=e28]
+              - generic [ref=e30]: Ações
+            - link [ref=e358] [cursor=pointer]:
+              - /url: /monitor
+              - img [ref=e32]
+              - generic [ref=e34]: Monitorar
+            - link [ref=e359] [cursor=pointer]:
+              - /url: /domains
+              - img [ref=e36]
+              - generic [ref=e39]: Domínios
+            - link [ref=e360] [cursor=pointer]:
+              - /url: /settings
+              - img [ref=e41]
+              - generic [ref=e44]: Configurações
+          - generic [ref=e46]:
+            - link [ref=e361] [cursor=pointer]:
+              - /url: https://easypanel.io/docs
+              - img [ref=e48]
+              - generic [ref=e50]: Documentação
+              - img [ref=e52]
+            - link [ref=e362] [cursor=pointer]:
+              - /url: https://discord.gg/9bcDSXcZQ7
+              - img [ref=e363]
+              - generic [ref=e59]: Discord
+              - img [ref=e61]
+            - link [ref=e364] [cursor=pointer]:
+              - /url: https://my.easypanel.io/feedback
+              - img [ref=e66]
+              - generic [ref=e68]: Feedback
+              - img [ref=e70]
+            - link [ref=e365] [cursor=pointer]:
+              - /url: https://my.easypanel.io/changelog
+              - img [ref=e75]
+              - generic [ref=e78]: Histórico de Alterações
+              - img [ref=e80]
+          - link [ref=e366] [cursor=pointer]:
+            - /url: /buy-license
+            - img [ref=e85]
+            - generic [ref=e89]: Comprar Licença
+          - button [ref=e367] [cursor=pointer]:
+            - img [ref=e91]
+            - generic [ref=e94]: Busca Rápida
+            - generic [ref=e96]: ⌘ K
+          - generic [ref=e97]:
+            - heading [level=2] [ref=e368]: Command Palette
+            - paragraph [ref=e99]: Search for a command to run...
+          - button [ref=e369] [cursor=pointer]:
+            - img [ref=e101]
+            - generic [ref=e105]: 76.13.232.134
+            - img [ref=e107]
+          - generic [ref=e110]:
+            - img [ref=e111]
+            - generic [ref=e113]: Modo Escuro
+            - generic [ref=e114]:
+              - switch [ref=e370]
+              - checkbox [ref=e116]
+          - button [ref=e371] [cursor=pointer]:
+            - img [ref=e118]
+            - generic [ref=e121]: Sair
+        - generic [ref=e123]:
+          - generic [ref=e124]:
+            - button [ref=e372] [cursor=pointer]:
+              - img [ref=e127]
+              - generic [ref=e130]: apps
+              - img [ref=e131]
+            - generic [ref=e134]:
+              - generic [ref=e135]: Serviços
+              - link [ref=e136] [cursor=pointer]:
+                - /url: /projects/apps/create
+                - img [ref=e137]
+            - generic [ref=e141]:
+              - link [ref=e373] [cursor=pointer]:
+                - /url: /projects/apps/app/app-corrida
+                - generic [ref=e146]: app-corrida
+              - link [ref=e374] [cursor=pointer]:
+                - /url: /projects/apps/compose/supabase
+                - generic [ref=e151]: supabase
+          - generic [ref=e157]:
+            - link [ref=e375] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida
+              - generic [ref=e160]:
+                - img [ref=e162]
+                - text: Visão Geral
+            - link [ref=e376] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/source
+              - generic [ref=e165]:
+                - img [ref=e167]
+                - text: Fonte
+            - link [ref=e377] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/deployments
+              - generic [ref=e172]:
+                - img [ref=e174]
+                - text: Implantações
+            - link [ref=e378] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/environment
+              - generic [ref=e181]:
+                - img [ref=e183]
+                - text: Ambiente
+            - link [ref=e379] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/domains
+              - generic [ref=e188]:
+                - img [ref=e190]
+                - text: Domínios
+            - link [ref=e380] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/redirects
+              - generic [ref=e195]:
+                - img [ref=e197]
+                - text: Redirecionamentos
+            - link [ref=e381] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/scripts
+              - generic [ref=e201]:
+                - img [ref=e203]
+                - text: Scripts
+            - link [ref=e382] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/security
+              - generic [ref=e208]:
+                - img [ref=e210]
+                - text: Segurança
+            - link [ref=e383] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/resources
+              - generic [ref=e216]:
+                - img [ref=e218]
+                - text: Recursos
+            - link [ref=e384] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/maintenance
+              - generic [ref=e223]:
+                - img [ref=e225]
+                - text: Manutenção
+            - link [ref=e385] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/storage
+              - generic [ref=e229]:
+                - img [ref=e231]
+                - text: Armazenamento
+            - link [ref=e386] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida/advanced
+              - generic [ref=e235]:
+                - img [ref=e237]
+                - text: Avançado
+      - generic [ref=e241]:
+        - generic [ref=e242]:
+          - generic [ref=e243]:
+            - link [ref=e387] [cursor=pointer]:
+              - /url: /projects/apps
+              - text: apps
+            - generic [ref=e245]: /
+            - generic [ref=e246]: app-corrida
+            - generic [ref=e247]: app
+            - button [ref=e388] [cursor=pointer]:
+              - img [ref=e250]
+          - generic [ref=e253]:
+            - link [ref=e389] [cursor=pointer]:
+              - /url: /projects/apps/create
+              - img [ref=e256]
+              - text: Serviço
+            - link [ref=e390] [cursor=pointer]:
+              - /url: /projects/apps/create?tab=templates
+              - img [ref=e259]
+              - text: Modelos
+            - link [ref=e391] [cursor=pointer]:
+              - /url: /projects/apps/settings
+              - img [ref=e263]
+        - generic [ref=e269]:
+          - generic [ref=e271]:
+            - generic [ref=e272]:
+              - button [ref=e392] [cursor=pointer]: Implantar
+              - button [ref=e393] [cursor=pointer]:
+                - img [ref=e275]
+              - button [ref=e394] [cursor=pointer]:
+                - img [ref=e278]
+              - button [ref=e395] [cursor=pointer]:
+                - img [ref=e283]
+              - button [ref=e396] [cursor=pointer]:
+                - img [ref=e287]
+              - link [ref=e397] [cursor=pointer]:
+                - /url: https://apps-app-corrida.56kyrn.easypanel.host/
+                - img [ref=e291]
+              - button [ref=e398] [cursor=pointer]:
+                - img [ref=e296]
+              - button [ref=e399] [cursor=pointer]:
+                - img [ref=e300]
+              - button [ref=e400] [cursor=pointer]:
+                - img [ref=e305]
+              - button [ref=e401] [cursor=pointer]:
+                - img [ref=e308]
+            - generic [ref=e311]:
+              - generic [ref=e312]:
+                - text: CPU
+                - generic [ref=e313]: 0.0%
+              - generic [ref=e314]: Memória 0.0 B
+              - generic [ref=e315]:
+                - text: I/O da Rede
+                - generic [ref=e316]: 0.0 B / 0.0 B
+          - generic [ref=e317]:
+            - paragraph [ref=e319]: Domínios
+            - generic [ref=e321]:
+              - generic [ref=e322]:
+                - button [ref=e402] [cursor=pointer]:
+                  - generic [ref=e326]: https://apps-app-corrida.56kyrn.easypanel.host/
+                - img [ref=e328]
+                - button [ref=e403] [cursor=pointer]:
+                  - generic [ref=e333]: http://apps_app-corrida:80/
+                - generic [ref=e334]:
+                  - button [ref=e404] [cursor=pointer]:
+                    - img [ref=e336]
+                  - link [ref=e405] [cursor=pointer]:
+                    - /url: https://apps-app-corrida.56kyrn.easypanel.host/
+                    - img [ref=e339]
+                  - button [ref=e406] [cursor=pointer]:
+                    - img [ref=e345]
+                  - button [ref=e407] [cursor=pointer]:
+                    - img [ref=e349]
+              - button [ref=e408] [cursor=pointer]: Adicionar Domínio
+    - region "Notifications alt+T"
+  - generic:
+    - region "Notifications-top"
+    - region "Notifications-top-left"
+    - region "Notifications-top-right"
+    - region "Notifications-bottom-left"
+    - region "Notifications-bottom"
+    - region "Notifications-bottom-right"
+  - dialog "Atualizar Domínio" [ref=e412]:
+    - generic [ref=e414]:
+      - heading "Atualizar Domínio" [level=2] [ref=e416]
+      - generic [ref=e417]:
+        - tablist [ref=e418]:
+          - tab "Detalhes" [active] [selected] [ref=e419] [cursor=pointer]
+          - tab "Middlewares" [ref=e420] [cursor=pointer]
+          - tab "SSL" [ref=e421] [cursor=pointer]
+        - tabpanel "Detalhes" [ref=e423]:
+          - generic [ref=e424]:
+            - generic [ref=e425]:
+              - group [ref=e427]:
+                - generic [ref=e428]: HTTPS
+                - checkbox "HTTPS" [checked] [ref=e430]
+              - group [ref=e434]:
+                - generic [ref=e435]: Host*
+                - textbox "Host" [ref=e437]: apps-app-corrida.56kyrn.easypanel.host
+              - group [ref=e439]:
+                - generic [ref=e440]: Caminho*
+                - textbox "Caminho" [ref=e442]: /
+            - separator
+            - generic [ref=e443]: Destino
+            - generic [ref=e444]:
+              - group [ref=e446]:
+                - generic [ref=e447]: Protocolo*
+                - generic [ref=e448]:
+                  - combobox "Protocolo" [ref=e449]:
+                    - option "HTTP" [selected]
+                    - option "HTTPS"
+                  - generic:
+                    - img
+              - group [ref=e451]:
+                - generic [ref=e452]:
+                  - text: Porta
+                  - img [ref=e453]
+                  - text: "*"
+                - generic [ref=e455]:
+                  - spinbutton "Porta" [ref=e456]: "80"
+                  - button "Select port" [ref=e458] [cursor=pointer]:
+                    - img [ref=e459]
+              - group [ref=e463]:
+                - generic [ref=e464]:
+                  - text: Caminho
+                  - img [ref=e465]
+                  - text: "*"
+                - textbox "Caminho" [ref=e468]: /
+      - button "Salvar" [ref=e470] [cursor=pointer]
+    - button "Close" [ref=e471] [cursor=pointer]:
+      - img
+      - generic [ref=e472]: Close

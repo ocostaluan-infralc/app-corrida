@@ -1,0 +1,15 @@
+[      65ms] [ERROR] ActionInvalidator subscription failed: TypeError: network error @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:480
+[     118ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[     118ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[     146ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[     146ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[     382ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:349
+[     382ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:349
+[     493ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[     493ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[     751ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[     751ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[     760ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[     760ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[    1596ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0
+[    1596ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida/deployments:0

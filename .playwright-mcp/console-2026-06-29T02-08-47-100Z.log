@@ -1,0 +1,6 @@
+[     272ms] [ERROR] ActionInvalidator subscription failed: TypeError: network error @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:480
+[   71543ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://apps-supabase.56kyrn.easypanel.host/auth/v1/token?grant_type=password:0
+[   94716ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://apps-supabase.56kyrn.easypanel.host/auth/v1/signup:0
+[  146503ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://apps-supabase.56kyrn.easypanel.host/rest/v1/profiles?select=id&limit=1:0
+[  146535ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://apps-supabase.56kyrn.easypanel.host/rest/v1/races?select=id&limit=1:0
+[  324507ms] [ERROR] Failed to load resource: the server responded with a status of 500 () @ https://apps-supabase.56kyrn.easypanel.host/auth/v1/signup:0

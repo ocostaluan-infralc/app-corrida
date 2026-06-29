@@ -1,0 +1,192 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - generic [ref=e6]:
+          - generic [ref=e7]:
+            - link "Home" [ref=e242] [cursor=pointer]:
+              - /url: /
+              - img "Home" [ref=e243]
+            - generic [ref=e10]:
+              - generic [ref=e11]: Easypanel
+              - generic [ref=e12]:
+                - generic [ref=e13]: v2.32.0
+                - button [ref=e14] [cursor=pointer]:
+                  - img [ref=e15]
+                - combobox [ref=e20]:
+                  - option "BR"
+                  - option "DA"
+                  - option "DE"
+                  - option "EN"
+                  - option "ES"
+                  - option "FA"
+                  - option "FR"
+                  - option "HI"
+                  - option "ID"
+                  - option "IT"
+                  - option "JA"
+                  - option "KA"
+                  - option "NL"
+                  - option "PL"
+                  - option "PT" [selected]
+                  - option "RO"
+                  - option "RU"
+                  - option "TH"
+                  - option "TR"
+                  - option "VI"
+                  - option "CN"
+          - generic [ref=e21]:
+            - link "Painel" [ref=e244] [cursor=pointer]:
+              - /url: /
+              - img [ref=e23]
+              - generic [ref=e26]: Painel
+            - link "Ações" [ref=e245] [cursor=pointer]:
+              - /url: /actions
+              - img [ref=e28]
+              - generic [ref=e30]: Ações
+            - link "Monitorar" [ref=e246] [cursor=pointer]:
+              - /url: /monitor
+              - img [ref=e32]
+              - generic [ref=e34]: Monitorar
+            - link "Domínios" [ref=e247] [cursor=pointer]:
+              - /url: /domains
+              - img [ref=e36]
+              - generic [ref=e39]: Domínios
+            - link "Configurações" [ref=e248] [cursor=pointer]:
+              - /url: /settings
+              - img [ref=e41]
+              - generic [ref=e44]: Configurações
+          - generic [ref=e46]:
+            - link "Documentação" [ref=e249] [cursor=pointer]:
+              - /url: https://easypanel.io/docs
+              - img [ref=e48]
+              - generic [ref=e50]: Documentação
+              - img [ref=e52]
+            - link "Discord Discord" [ref=e250] [cursor=pointer]:
+              - /url: https://discord.gg/9bcDSXcZQ7
+              - img "Discord" [ref=e251]
+              - generic [ref=e59]: Discord
+              - img [ref=e61]
+            - link "Feedback" [ref=e252] [cursor=pointer]:
+              - /url: https://my.easypanel.io/feedback
+              - img [ref=e66]
+              - generic [ref=e68]: Feedback
+              - img [ref=e70]
+            - link "Histórico de Alterações" [ref=e253] [cursor=pointer]:
+              - /url: https://my.easypanel.io/changelog
+              - img [ref=e75]
+              - generic [ref=e78]: Histórico de Alterações
+              - img [ref=e80]
+          - link "Comprar Licença" [ref=e254] [cursor=pointer]:
+            - /url: /buy-license
+            - img [ref=e85]
+            - generic [ref=e89]: Comprar Licença
+          - button "Busca Rápida ⌘ K" [ref=e255] [cursor=pointer]:
+            - img [ref=e91]
+            - generic [ref=e94]: Busca Rápida
+            - generic [ref=e96]: ⌘ K
+          - generic [ref=e97]:
+            - heading "Command Palette" [level=2] [ref=e256]
+            - paragraph [ref=e99]: Search for a command to run...
+          - button "76.13.232.134" [ref=e257] [cursor=pointer]:
+            - img [ref=e101]
+            - generic [ref=e105]: 76.13.232.134
+            - img [ref=e107]
+          - generic [ref=e110]:
+            - img [ref=e111]
+            - generic [ref=e113]: Modo Escuro
+            - generic [ref=e114]:
+              - switch "Modo Escuro" [ref=e258]
+              - checkbox [ref=e116]
+          - button "Sair" [ref=e259] [cursor=pointer]:
+            - img [ref=e118]
+            - generic [ref=e121]: Sair
+        - generic [ref=e124]:
+          - button "apps" [ref=e260] [cursor=pointer]:
+            - img [ref=e127]
+            - generic [ref=e130]: apps
+            - img [ref=e131]
+          - generic [ref=e134]:
+            - generic [ref=e135]: Serviços
+            - link [ref=e136] [cursor=pointer]:
+              - /url: /projects/apps/create
+              - img [ref=e137]
+          - generic [ref=e141]:
+            - link "app-corrida" [ref=e262] [cursor=pointer]:
+              - /url: /projects/apps/app/app-corrida
+              - generic [ref=e265]: app-corrida
+            - link "supabase" [ref=e266] [cursor=pointer]:
+              - /url: /projects/apps/compose/supabase
+              - generic [ref=e146]: supabase
+      - generic [ref=e148]:
+        - generic [ref=e149]:
+          - generic [ref=e150]:
+            - link "apps" [ref=e267] [cursor=pointer]:
+              - /url: /projects/apps
+            - generic [ref=e268]: /
+            - generic [ref=e269]: app-corrida
+            - generic [ref=e270]: app
+            - button "Rename" [ref=e272] [cursor=pointer]:
+              - img [ref=e273]
+          - generic [ref=e152]:
+            - link "Serviço" [ref=e276] [cursor=pointer]:
+              - /url: /projects/apps/create
+              - img [ref=e155]
+              - text: Serviço
+            - link "Modelos" [ref=e277] [cursor=pointer]:
+              - /url: /projects/apps/create?tab=templates
+              - img [ref=e158]
+              - text: Modelos
+            - link "Project Settings" [ref=e278] [cursor=pointer]:
+              - /url: /projects/apps/settings
+              - img [ref=e162]
+        - generic [ref=e282]:
+          - generic [ref=e283]:
+            - paragraph [ref=e285]: Fonte
+            - generic [ref=e287]:
+              - group [ref=e288]:
+                - button "Upload" [ref=e289] [cursor=pointer]
+                - button "Github" [active] [ref=e290] [cursor=pointer]
+                - button "Imagem Docker" [ref=e291] [cursor=pointer]
+                - button "Git" [ref=e292] [cursor=pointer]
+                - button "Dockerfile" [ref=e293] [cursor=pointer]
+              - generic [ref=e300]:
+                - alert [ref=e301]:
+                  - img [ref=e303]
+                  - generic [ref=e305]:
+                    - text: For deploying private repositories, you need Github Token. Go to
+                    - link "Settings" [ref=e306] [cursor=pointer]:
+                      - /url: /settings/server/github
+                    - text: to configure it.
+                - group [ref=e307]:
+                  - generic [ref=e308]: Repositório*
+                  - textbox "Repositório" [ref=e310]:
+                    - /placeholder: owner/repo
+                - alert [ref=e311]:
+                  - img [ref=e313]
+                  - generic [ref=e315]:
+                    - generic [ref=e316]: github.com
+                    - generic [ref=e317]: /
+                    - generic [ref=e318]: owner/repo
+                - generic [ref=e319]:
+                  - group [ref=e320]:
+                    - generic [ref=e321]: Ramo*
+                    - textbox "Ramo" [ref=e323]:
+                      - /placeholder: ""
+                    - generic [ref=e324]: Isto precisa ser um branch válido no seu repositório
+                  - group [ref=e325]:
+                    - generic [ref=e326]: Caminho de Build*
+                    - textbox "Caminho de Build" [ref=e328]:
+                      - /placeholder: /
+                      - text: /
+                    - generic [ref=e329]: Isto é útil se você tiver um monorepo
+                - button "Salvar" [ref=e331] [cursor=pointer]
+          - button "Destruir Serviço" [ref=e298] [cursor=pointer]
+    - region "Notifications alt+T"
+  - generic:
+    - region "Notifications-top"
+    - region "Notifications-top-left"
+    - region "Notifications-top-right"
+    - region "Notifications-bottom-left"
+    - region "Notifications-bottom"
+    - region "Notifications-bottom-right"

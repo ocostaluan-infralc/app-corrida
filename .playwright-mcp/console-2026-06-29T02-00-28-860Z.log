@@ -1,0 +1,11 @@
+[      59ms] [ERROR] ActionInvalidator subscription failed: TypeError: network error @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:480
+[     121ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida:0
+[     121ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida:0
+[     160ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida:0
+[     160ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida:0
+[     415ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:349
+[     415ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/assets/index-CBlUiBtI.js:349
+[     618ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida:0
+[     619ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida:0
+[     643ms] [WARNING] Failed to decode downloaded font: https://56kyrn.easypanel.host/assets/files/inter-latin-wght-normal.woff2 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida:0
+[     643ms] [WARNING] OTS parsing error: invalid sfntVersion: 1008821359 @ https://56kyrn.easypanel.host/projects/apps/app/app-corrida:0

@@ -194,6 +194,13 @@ create trigger on_auth_user_created
   for each row
   execute function public.handle_new_user();
 
+-- Permissoes necessarias no Supabase self-hosted:
+-- o GoTrue cria usuarios usando o papel supabase_auth_admin, que por padrao
+-- nao tem acesso ao schema public. Sem isto, o trigger acima falha ao ser
+-- chamado e o cadastro retorna erro 500 ("Database error saving new user").
+grant usage on schema public to supabase_auth_admin;
+grant execute on function public.handle_new_user() to supabase_auth_admin;
+
 
 -- ----------------------------------------------------------------------------
 -- Como promover um administrador
