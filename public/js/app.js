@@ -386,6 +386,7 @@
 
     // Rodape: etapa 1.
     show(els.cancelBtn);
+    show(els.manualBtn);
     show(els.extractBtn);
     hide(els.backBtn);
     hide(els.saveBtn);
@@ -400,6 +401,7 @@
     els.modalTitle.textContent = 'Revisar prova';
 
     hide(els.cancelBtn);
+    hide(els.manualBtn);
     hide(els.extractBtn);
     show(els.backBtn);
     show(els.saveBtn);
@@ -416,6 +418,7 @@
     els.modalTitle.textContent = 'Adicionar prova';
 
     show(els.cancelBtn);
+    show(els.manualBtn);
     show(els.extractBtn);
     hide(els.backBtn);
     hide(els.saveBtn);
@@ -432,6 +435,17 @@
     els.fKitLocation.value = data.kit_pickup_location || '';
     els.fRoute.value = data.route_summary || '';
     els.fNotes.value = data.notes || '';
+  }
+
+  // ===== Preencher manualmente (pula a extracao automatica) =====
+  function handleManual() {
+    hide(els.modalError);
+    els.modalError.textContent = '';
+    var name = els.raceNameInput.value.trim();
+    fillReviewForm({}, name);
+    hide(els.reviewWarning);
+    els.reviewWarning.textContent = '';
+    showReviewStep();
   }
 
   // ===== Extrair dados da prova =====
@@ -595,6 +609,7 @@
     els.fRoute = $('fRoute');
     els.fNotes = $('fNotes');
     els.cancelBtn = $('cancelBtn');
+    els.manualBtn = $('manualBtn');
     els.extractBtn = $('extractBtn');
     els.backBtn = $('backBtn');
     els.saveBtn = $('saveBtn');
@@ -616,6 +631,7 @@
 
     els.modalCloseBtn.addEventListener('click', closeModal);
     els.cancelBtn.addEventListener('click', closeModal);
+    els.manualBtn.addEventListener('click', handleManual);
     els.backBtn.addEventListener('click', backToExtractStep);
     els.extractBtn.addEventListener('click', handleExtract);
     els.saveBtn.addEventListener('click', handleSave);
