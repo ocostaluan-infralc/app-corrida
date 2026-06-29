@@ -1,12 +1,12 @@
 // App Corrida - servidor Express (ESM)
 // Serve os arquivos estaticos de ./public, expoe a configuracao publica em /config.js
-// e faz o proxy seguro para a API da Anthropic (extracao de dados de provas de corrida).
-// A chave ANTHROPIC_API_KEY fica somente no servidor e nunca e enviada ao navegador.
+// e faz o proxy seguro para a API da OpenAI (extracao de dados de provas de corrida).
+// A chave OPENAI_API_KEY fica somente no servidor e nunca e enviada ao navegador.
 
 import express from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import Anthropic from '@anthropic-ai/sdk';
+import OpenAI from 'openai';
 import { createClient } from '@supabase/supabase-js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -103,7 +103,7 @@ async function getUserFromRequest(req) {
   }
 }
 
-// Limite de uso simples em memoria (por usuario): protege a chave da Anthropic
+// Limite de uso simples em memoria (por usuario): protege a chave da OpenAI
 // contra abuso. Janela deslizante.
 const RATE_LIMIT_MAX = 20;
 const RATE_LIMIT_WINDOW_MS = 5 * 60 * 1000;
@@ -186,14 +186,14 @@ app.post('/api/extract-race', async (req, res) => {
   }
 
   // Sem a chave da API o servidor nao consegue prosseguir.
-  if (!process.env.ANTHROPIC_API_KEY) {
+  if (!process.env.OPENAI_API_KEY) {
     return res
       .status(500)
       .json({ error: 'Chave da API nao configurada no servidor.' });
   }
 
   // Exige usuario autenticado (sessao valida do Supabase). Protege a chave da
-  // Anthropic contra uso anonimo. O front-end envia Authorization: Bearer <token>.
+  // OpenAI contra uso anonimo. O front-end envia Authorization: Bearer <token>.
   if (!getSupabaseAuthClient()) {
     return res
       .status(503)
@@ -215,47 +215,50 @@ app.post('/api/extract-race', async (req, res) => {
   }
 
   try {
-    // O construtor le ANTHROPIC_API_KEY do ambiente automaticamente.
-    const client = new Anthropic();
-
-    // A ferramenta web_fetch so acessa URLs presentes na conversa, entao a URL
-    // precisa estar no texto da mensagem do usuario.
-    const prompt =
-      'Use a ferramenta web_fetch para acessar o conteudo do site a seguir e ' +
-      'extraia as seguintes informacoes da prova de corrida: nome oficial da ' +
-      'prova, data de realizacao (formato DD/MM/YYYY), cidade e local de largada, ' +
-      'distancias disponiveis (ex: 5km, 10km, 21km, 42km), data e local de ' +
-      'retirada de kit, resumo do percurso, e qualquer informacao relevante para ' +
-      'o corredor (cortes de tempo, exigencias, contato). Retorne apenas um JSON ' +
-      'valido com as chaves: name, race_date, location, distances, ' +
-      'kit_pickup_date, kit_pickup_location, route_summary, notes. Se alguma ' +
-      'informacao nao estiver disponivel, use null. Nao escreva nenhum texto fora ' +
-      'do JSON. URL: ' +
-      url;
-
-    let messages = [{ role: 'user', content: prompt }];
-    let response;
-
-    // A ferramenta web_fetch roda no servidor da Anthropic, entao o modelo pode
-    // retornar stop_reason 'pause_turn'. Tratamos isso anexando a resposta do
-    // assistente as mensagens e reenviando o pedido, ate 5 vezes.
-    for (let i = 0; i < 6; i++) {
-      response = await client.messages.create({
-        model: 'claude-sonnet-4-6',
-        max_tokens: 2000,
-        tools: [{ type: 'web_fetch_20260209', name: 'web_fetch', max_uses: 5 }],
-        messages,
+    // Busca o conteudo da URL no servidor e passa o texto para o modelo.
+    let pageText = '';
+    try {
+      const fetchRes = await fetch(url, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; AppCorrida/1.0)' },
+        signal: AbortSignal.timeout(15000),
       });
-      if (response.stop_reason !== 'pause_turn') break;
-      messages = [...messages, { role: 'assistant', content: response.content }];
+      const html = await fetchRes.text();
+      // Remove tags HTML e colapsa espacos em branco.
+      pageText = html
+        .replace(/<script[\s\S]*?<\/script>/gi, '')
+        .replace(/<style[\s\S]*?<\/style>/gi, '')
+        .replace(/<[^>]+>/g, ' ')
+        .replace(/\s{2,}/g, ' ')
+        .trim()
+        .slice(0, 20000);
+    } catch (fetchErr) {
+      console.error('Erro ao buscar URL:', fetchErr.message);
     }
 
-    // Junta todos os blocos de texto da resposta.
-    const text = (response.content || [])
-      .filter((block) => block.type === 'text')
-      .map((block) => block.text)
-      .join('\n');
+    const client = new OpenAI();
 
+    const systemPrompt =
+      'Voce extrai dados de provas de corrida. Retorne SOMENTE um JSON valido, ' +
+      'sem texto adicional, com as chaves: name (string), race_date (DD/MM/YYYY), ' +
+      'location (cidade e local de largada), distances (array de strings, ex: ["5km","10km"]), ' +
+      'kit_pickup_date (DD/MM/YYYY), kit_pickup_location (string), ' +
+      'route_summary (string), notes (string com info relevante para o corredor). ' +
+      'Use null para informacoes nao encontradas.';
+
+    const userPrompt = pageText
+      ? `Extraia os dados desta pagina de prova de corrida:\n\n${pageText}`
+      : `Nao foi possivel acessar o site. URL: ${url}. Retorne um JSON com todos os campos null.`;
+
+    const response = await client.chat.completions.create({
+      model: 'gpt-4o',
+      max_tokens: 1500,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: userPrompt },
+      ],
+    });
+
+    const text = response.choices?.[0]?.message?.content || '';
     const parsed = parseRaceJson(text);
 
     if (!parsed) {
