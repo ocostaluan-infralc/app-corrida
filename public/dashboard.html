@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minhas provas - App Corrida</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- ===== Topbar ===== -->
+    <header class="topbar">
+      <div class="container">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          App Corrida
+        </div>
+        <div class="nav-actions">
+          <span class="user-name" id="userName"></span>
+          <button class="btn btn-secondary btn-sm" id="signOutBtn" type="button">Sair</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <div class="row row-between section">
+          <div>
+            <h1 class="mb-0">Minhas provas</h1>
+            <p class="muted mt-0">Acompanhe suas corridas e a contagem regressiva.</p>
+          </div>
+          <button class="btn btn-primary" id="addRaceBtn" type="button">Adicionar prova</button>
+        </div>
+
+        <!-- Erro geral do carregamento -->
+        <div class="alert alert-error hidden" id="listError" role="alert"></div>
+
+        <!-- Estado de carregamento -->
+        <div class="loading-block" id="loadingState">
+          <span class="spinner spinner-dark"></span>
+          Carregando suas provas...
+        </div>
+
+        <!-- Estado vazio -->
+        <div class="card hidden" id="emptyState">
+          <div class="empty-state">
+            <div class="empty-icon">&#127939;</div>
+            <h3>Nenhuma prova cadastrada ainda</h3>
+            <p class="muted">
+              Adicione sua primeira prova para acompanhar a contagem regressiva e a retirada do kit.
+            </p>
+            <button class="btn btn-primary mt-3" id="emptyAddBtn" type="button">
+              Adicionar prova
+            </button>
+          </div>
+        </div>
+
+        <!-- Lista de provas -->
+        <div class="grid hidden" id="racesList"></div>
+      </div>
+    </main>
+
+    <!-- ===== Modal: adicionar prova ===== -->
+    <div class="modal-overlay" id="raceModal">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="raceModalTitle"
+      >
+        <div class="modal-header">
+          <h2 id="raceModalTitle">Adicionar prova</h2>
+          <button class="modal-close" id="modalCloseBtn" type="button" aria-label="Fechar">
+            &times;
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <div class="alert alert-error hidden" id="modalError" role="alert"></div>
+
+          <!-- Etapa 1: extrair dados -->
+          <div id="extractStep">
+            <p class="muted small">
+              Informe o nome e o link oficial da prova. Vamos tentar preencher os dados
+              automaticamente para voce revisar.
+            </p>
+            <div class="form-group">
+              <label class="label" for="raceNameInput">Nome da prova</label>
+              <input
+                class="input"
+                type="text"
+                id="raceNameInput"
+                placeholder="Ex: Maratona de Sao Paulo"
+              />
+            </div>
+            <div class="form-group">
+              <label class="label" for="raceUrlInput">Link oficial da prova</label>
+              <input class="input" type="url" id="raceUrlInput" placeholder="https://..." />
+              <p class="help">Cole o endereco da pagina oficial da prova.</p>
+            </div>
+          </div>
+
+          <!-- Etapa 2: revisar e salvar -->
+          <div id="reviewStep" class="hidden">
+            <div class="alert alert-warning hidden" id="reviewWarning" role="status"></div>
+            <p class="muted small">Revise e ajuste os dados antes de salvar.</p>
+
+            <div class="form-group">
+              <label class="label" for="fName">Nome da prova</label>
+              <input class="input" type="text" id="fName" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="label" for="fDate">Data da prova</label>
+                <input class="input" type="date" id="fDate" />
+              </div>
+              <div class="form-group">
+                <label class="label" for="fDistances">Distancias</label>
+                <input
+                  class="input"
+                  type="text"
+                  id="fDistances"
+                  placeholder="5km, 10km, 21km"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="fLocation">Cidade e local de largada</label>
+              <input class="input" type="text" id="fLocation" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="label" for="fKitDate">Data de retirada do kit</label>
+                <input class="input" type="text" id="fKitDate" />
+              </div>
+              <div class="form-group">
+                <label class="label" for="fKitLocation">Local de retirada do kit</label>
+                <input class="input" type="text" id="fKitLocation" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="fRoute">Resumo do percurso</label>
+              <textarea class="input" id="fRoute"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="label" for="fNotes">Observacoes</label>
+              <textarea class="input" id="fNotes"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <!-- Botoes da etapa 1 -->
+          <button class="btn btn-secondary" id="cancelBtn" type="button">Cancelar</button>
+          <button class="btn btn-primary" id="extractBtn" type="button">Extrair dados</button>
+          <!-- Botoes da etapa 2 -->
+          <button class="btn btn-secondary hidden" id="backBtn" type="button">Voltar</button>
+          <button class="btn btn-primary hidden" id="saveBtn" type="button">Salvar prova</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ordem de carregamento exigida pelo contrato -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/config.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

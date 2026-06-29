@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Corrida</title>
+    <meta
+      name="description"
+      content="Organize suas provas de corrida com acompanhamento da nutricionista."
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <div class="auth-brand">
+          <span class="brand-mark"></span>
+          App Corrida
+        </div>
+
+        <!-- ===== Formulario de login ===== -->
+        <section id="loginSection">
+          <p class="auth-subtitle">Entre para ver suas provas e a contagem regressiva.</p>
+
+          <div class="alert alert-error hidden" id="loginError" role="alert"></div>
+          <div class="alert alert-success hidden" id="loginSuccess" role="status"></div>
+
+          <form id="loginForm" novalidate>
+            <div class="form-group">
+              <label class="label" for="loginEmail">Email</label>
+              <input
+                class="input"
+                type="email"
+                id="loginEmail"
+                name="email"
+                autocomplete="email"
+                placeholder="voce@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="label" for="loginPassword">Senha</label>
+              <input
+                class="input"
+                type="password"
+                id="loginPassword"
+                name="password"
+                autocomplete="current-password"
+                placeholder="Sua senha"
+                required
+              />
+            </div>
+            <button class="btn btn-primary btn-block" type="submit" id="loginBtn">Entrar</button>
+          </form>
+
+          <p class="auth-switch">
+            Ainda nao tem conta?
+            <a class="link" id="goToSignup">Criar conta</a>
+          </p>
+        </section>
+
+        <!-- ===== Formulario de cadastro ===== -->
+        <section id="signupSection" class="hidden">
+          <p class="auth-subtitle">Crie sua conta de corredor para comecar.</p>
+
+          <div class="alert alert-error hidden" id="signupError" role="alert"></div>
+          <div class="alert alert-success hidden" id="signupSuccess" role="status"></div>
+
+          <form id="signupForm" novalidate>
+            <div class="form-group">
+              <label class="label" for="signupName">Nome completo</label>
+              <input
+                class="input"
+                type="text"
+                id="signupName"
+                name="full_name"
+                autocomplete="name"
+                placeholder="Seu nome"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="label" for="signupEmail">Email</label>
+              <input
+                class="input"
+                type="email"
+                id="signupEmail"
+                name="email"
+                autocomplete="email"
+                placeholder="voce@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="label" for="signupPassword">Senha</label>
+              <input
+                class="input"
+                type="password"
+                id="signupPassword"
+                name="password"
+                autocomplete="new-password"
+                placeholder="Pelo menos 6 caracteres"
+                required
+              />
+              <p class="help">Use pelo menos 6 caracteres.</p>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit" id="signupBtn">
+              Criar conta
+            </button>
+          </form>
+
+          <p class="auth-switch">
+            Ja tem conta?
+            <a class="link" id="goToLogin">Entrar</a>
+          </p>
+        </section>
+      </div>
+    </div>
+
+    <!-- Ordem de carregamento exigida pelo contrato -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/config.js"></script>
+    <script src="/js/auth.js"></script>
+
+    <!-- Logica de login/cadastro especifica desta pagina (modulo inline) -->
+    <script type="module">
+      'use strict';
+
+      var $ = function (id) {
+        return document.getElementById(id);
+      };
+
+      var loginSection = $('loginSection');
+      var signupSection = $('signupSection');
+      var loginError = $('loginError');
+      var loginSuccess = $('loginSuccess');
+      var signupError = $('signupError');
+      var signupSuccess = $('signupSuccess');
+      var loginBtn = $('loginBtn');
+      var signupBtn = $('signupBtn');
+
+      // ===== Helpers de UI =====
+      function show(el) {
+        el.classList.remove('hidden');
+      }
+      function hide(el) {
+        el.classList.add('hidden');
+      }
+      function setMessage(el, text) {
+        el.textContent = text;
+        show(el);
+      }
+      function clearMessages() {
+        hide(loginError);
+        hide(loginSuccess);
+        hide(signupError);
+        hide(signupSuccess);
+      }
+      function setLoading(btn, loading, label) {
+        btn.disabled = loading;
+        btn.textContent = loading ? 'Aguarde...' : label;
+      }
+
+      // ===== Alternar entre login e cadastro =====
+      function showLogin() {
+        clearMessages();
+        hide(signupSection);
+        show(loginSection);
+      }
+      function showSignup() {
+        clearMessages();
+        hide(loginSection);
+        show(signupSection);
+      }
+      $('goToSignup').addEventListener('click', showSignup);
+      $('goToLogin').addEventListener('click', showLogin);
+
+      // ===== Traducao de erros do Supabase para portugues =====
+      function translateAuthError(err) {
+        var msg = (err && err.message ? err.message : '').toLowerCase();
+        if (msg.indexOf('invalid login credentials') !== -1) {
+          return 'Email ou senha incorretos.';
+        }
+        if (msg.indexOf('email not confirmed') !== -1) {
+          return 'Confirme seu email antes de entrar. Verifique sua caixa de entrada.';
+        }
+        if (
+          msg.indexOf('already registered') !== -1 ||
+          msg.indexOf('already been registered') !== -1 ||
+          msg.indexOf('user already exists') !== -1
+        ) {
+          return 'Este email ja esta cadastrado. Tente entrar.';
+        }
+        if (msg.indexOf('password should be at least') !== -1) {
+          return 'A senha deve ter pelo menos 6 caracteres.';
+        }
+        if (
+          msg.indexOf('unable to validate email') !== -1 ||
+          msg.indexOf('invalid email') !== -1 ||
+          msg.indexOf('invalid format') !== -1
+        ) {
+          return 'Informe um email valido.';
+        }
+        if (msg.indexOf('rate limit') !== -1 || msg.indexOf('too many') !== -1) {
+          return 'Muitas tentativas. Aguarde um momento e tente novamente.';
+        }
+        if (msg.indexOf('network') !== -1 || msg.indexOf('failed to fetch') !== -1) {
+          return 'Falha de conexao. Verifique sua internet e tente de novo.';
+        }
+        return 'Nao foi possivel concluir. Tente novamente.';
+      }
+
+      var INACTIVE_MESSAGE =
+        'Sua conta esta desativada. Entre em contato com a nutricionista para reativar o acesso.';
+
+      // ===== Roteamento por papel apos login =====
+      async function routeByRole() {
+        var profile = await window.AppAuth.getProfile();
+        if (!profile) {
+          // Sem perfil acessivel: trata como sem acesso.
+          await window.AppAuth.signOut();
+          throw new Error('profile-unavailable');
+        }
+        if (profile.active !== true) {
+          await window.AppAuth.signOut();
+          throw new Error('inactive');
+        }
+        if (profile.role === 'admin') {
+          window.location.href = '/admin.html';
+        } else {
+          window.location.href = '/dashboard.html';
+        }
+      }
+
+      // ===== Login =====
+      $('loginForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        clearMessages();
+        var email = $('loginEmail').value.trim();
+        var password = $('loginPassword').value;
+        if (!email || !password) {
+          setMessage(loginError, 'Preencha email e senha.');
+          return;
+        }
+        setLoading(loginBtn, true, 'Entrar');
+        try {
+          await window.AppAuth.signIn(email, password);
+          await routeByRole();
+        } catch (err) {
+          if (err && err.message === 'inactive') {
+            setMessage(loginError, INACTIVE_MESSAGE);
+          } else if (err && err.message === 'profile-unavailable') {
+            setMessage(
+              loginError,
+              'Nao foi possivel acessar seu perfil. Entre em contato com a nutricionista.'
+            );
+          } else {
+            setMessage(loginError, translateAuthError(err));
+          }
+          setLoading(loginBtn, false, 'Entrar');
+        }
+      });
+
+      // ===== Cadastro =====
+      $('signupForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        clearMessages();
+        var fullName = $('signupName').value.trim();
+        var email = $('signupEmail').value.trim();
+        var password = $('signupPassword').value;
+        if (!fullName || !email || !password) {
+          setMessage(signupError, 'Preencha nome, email e senha.');
+          return;
+        }
+        if (password.length < 6) {
+          setMessage(signupError, 'A senha deve ter pelo menos 6 caracteres.');
+          return;
+        }
+        setLoading(signupBtn, true, 'Criar conta');
+        try {
+          await window.AppAuth.signUp(fullName, email, password);
+          // Se o Supabase ja criou a sessao, segue direto para o painel.
+          var session = await window.AppAuth.getSession();
+          if (session) {
+            window.location.href = '/dashboard.html';
+            return;
+          }
+          // Caso a confirmacao de email esteja ativa, nao ha sessao ainda.
+          $('signupForm').reset();
+          showLogin();
+          setMessage(
+            loginSuccess,
+            'Conta criada. Confirme seu email pelo link enviado e depois faca login.'
+          );
+        } catch (err) {
+          setMessage(signupError, translateAuthError(err));
+          setLoading(signupBtn, false, 'Criar conta');
+        }
+      });
+
+      // ===== Se ja estiver logado, encaminha direto =====
+      (async function bootstrap() {
+        try {
+          var session = await window.AppAuth.getSession();
+          if (session) {
+            await routeByRole();
+          }
+        } catch (err) {
+          // Ignora: o usuario continua na tela de login.
+        }
+      })();
+    </script>
+  </body>
+</html>

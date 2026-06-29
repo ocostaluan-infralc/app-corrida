@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Painel da nutricionista. App Corrida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- Barra superior: nome do app e sair. -->
+    <header class="topbar">
+      <div class="container">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          App Corrida
+        </div>
+        <div class="nav-actions">
+          <span class="user-name" id="admin-name"></span>
+          <button class="btn btn-secondary btn-sm" id="signout-btn" type="button">
+            Sair
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="container">
+        <div class="section">
+          <h1>Pacientes</h1>
+          <p class="muted mb-0">
+            Visao geral de todos os corredores e suas provas. Use os botoes para
+            ativar ou desativar o acesso de cada paciente.
+          </p>
+        </div>
+
+        <!-- Area de mensagens (erros e confirmacoes). -->
+        <div id="alert-area"></div>
+
+        <!-- Resumo rapido (contadores). Preenchido pelo admin.js. -->
+        <div id="stats" class="row section hidden"></div>
+
+        <!-- Carregando. -->
+        <div id="loading" class="loading-block">
+          <span class="spinner spinner-dark"></span>
+          Carregando pacientes...
+        </div>
+
+        <!-- Lista de pacientes. Preenchida pelo admin.js. -->
+        <div id="patients" class="stack"></div>
+
+        <!-- Estado vazio. -->
+        <div id="empty" class="card empty-state hidden">
+          <div class="empty-icon">🏁</div>
+          <h3>Nenhum paciente por aqui</h3>
+          <p class="muted mb-0">
+            Quando um corredor criar uma conta, ele aparece nesta lista
+            automaticamente.
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Ordem de carregamento exigida: Supabase, config, auth, script da pagina. -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="/config.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

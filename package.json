@@ -1,0 +1,17 @@
+{
+  "name": "app-corrida",
+  "version": "1.0.0",
+  "description": "App para pacientes corredores registrarem provas, com extracao de dados via Claude API.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.106.0",
+    "@supabase/supabase-js": "^2.108.2",
+    "express": "^5.2.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
